@@ -4,6 +4,7 @@ CREATE TABLE "clientes" (
     "cpf" TEXT NOT NULL,
     "nome" TEXT NOT NULL,
     "email" TEXT NOT NULL,
+    "password_hash" TEXT NOT NULL,
     "telefone" TEXT NOT NULL,
     "cep" TEXT NOT NULL,
     "estado" TEXT NOT NULL,
@@ -11,7 +12,7 @@ CREATE TABLE "clientes" (
     "bairro" TEXT NOT NULL,
     "endereco" TEXT NOT NULL,
     "numero" TEXT NOT NULL,
-    "complemento" TEXT NOT NULL
+    "complemento" TEXT
 );
 
 -- CreateTable
@@ -32,6 +33,14 @@ CREATE TABLE "pedidos" (
     "created_at" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT "pedidos_id_food_fkey" FOREIGN KEY ("id_food") REFERENCES "comidas" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
     CONSTRAINT "pedidos_id_cli_fkey" FOREIGN KEY ("id_cli") REFERENCES "clientes" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);
+
+-- CreateTable
+CREATE TABLE "pedido_comidas" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "id_food" INTEGER NOT NULL,
+    CONSTRAINT "pedido_comidas_id_food_fkey" FOREIGN KEY ("id_food") REFERENCES "comidas" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT "pedido_comidas_id_fkey" FOREIGN KEY ("id") REFERENCES "pedidos" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 -- CreateIndex

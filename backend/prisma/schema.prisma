@@ -15,6 +15,7 @@ model Cliente {
   cpf   String @unique
   nome  String
   email String  @unique
+  password_hash String
   telefone String
   cep String
   estado String
@@ -22,9 +23,9 @@ model Cliente {
   bairro String
   endereco String
   numero String
-  complemento String
+  complemento String?
 
-  pedidos Pedido[]
+  Pedido Pedido[]
 
   @@map("clientes")
 }
@@ -37,7 +38,8 @@ model Comida {
   descricao String
   tipo String
 
-  pedidos Pedido[]
+  Pedido Pedido[]
+  Pedido_comidas Pedido_comidas[]
 
   @@map("comidas")
 }
@@ -51,6 +53,16 @@ model Pedido {
   comida Comida @relation(fields: [id_food], references: [id])
   cliente Cliente @relation(fields: [id_cli], references: [id])
 
+  Pedido_comidas Pedido_comidas[]
 
   @@map("pedidos")
+}
+
+model Pedido_comidas{
+  id Int @id
+  id_food Int 
+  comida Comida @relation(fields: [id_food], references: [id])
+  pedido Pedido @relation(fields: [id], references: [id])
+
+  @@map("pedido_comidas")
 }
