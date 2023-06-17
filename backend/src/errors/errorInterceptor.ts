@@ -21,7 +21,7 @@ export function errorInterceptor(
         });
 
     }
-    
+    console.log(error.message);
     return response.status(500).json({
         status: "Error",
         message: "Internal Server Error"

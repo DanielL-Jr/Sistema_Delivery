@@ -29,18 +29,18 @@ CREATE TABLE "comidas" (
 CREATE TABLE "pedidos" (
     "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     "id_cli" INTEGER NOT NULL,
-    "id_food" INTEGER NOT NULL,
     "created_at" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    CONSTRAINT "pedidos_id_food_fkey" FOREIGN KEY ("id_food") REFERENCES "comidas" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
     CONSTRAINT "pedidos_id_cli_fkey" FOREIGN KEY ("id_cli") REFERENCES "clientes" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 -- CreateTable
 CREATE TABLE "pedido_comidas" (
     "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "id_pedido" INTEGER NOT NULL,
     "id_food" INTEGER NOT NULL,
+    "qntd" INTEGER NOT NULL,
     CONSTRAINT "pedido_comidas_id_food_fkey" FOREIGN KEY ("id_food") REFERENCES "comidas" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
-    CONSTRAINT "pedido_comidas_id_fkey" FOREIGN KEY ("id") REFERENCES "pedidos" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+    CONSTRAINT "pedido_comidas_id_pedido_fkey" FOREIGN KEY ("id_pedido") REFERENCES "pedidos" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 -- CreateIndex

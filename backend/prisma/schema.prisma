@@ -38,7 +38,7 @@ model Comida {
   descricao String
   tipo String
 
-  Pedido Pedido[]
+
   Pedido_comidas Pedido_comidas[]
 
   @@map("comidas")
@@ -47,10 +47,8 @@ model Comida {
 model Pedido {
   id Int @id @default(autoincrement())
   id_cli Int
-  id_food Int
   created_at DateTime @default(now())
 
-  comida Comida @relation(fields: [id_food], references: [id])
   cliente Cliente @relation(fields: [id_cli], references: [id])
 
   Pedido_comidas Pedido_comidas[]
@@ -59,10 +57,13 @@ model Pedido {
 }
 
 model Pedido_comidas{
-  id Int @id
+  id Int @id @default(autoincrement())
+  id_pedido Int
   id_food Int 
+  qntd Int
+
   comida Comida @relation(fields: [id_food], references: [id])
-  pedido Pedido @relation(fields: [id], references: [id])
+  pedido Pedido @relation(fields: [id_pedido], references: [id])
 
   @@map("pedido_comidas")
 }

@@ -25,7 +25,7 @@ export class ComidasController{
 
         
         //Procura por comidas cadastrados com o mesmo nome
-        const comidaExists = await prisma.cliente.findFirst({
+        const comidaExists = await prisma.comida.findFirst({
             where: { nome },
         });
 

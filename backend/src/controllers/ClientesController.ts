@@ -155,6 +155,7 @@ export class ClientesController{
         return response.status(200).json(excludeFields(cliente, ['password_hash']));
     }
 
+    /*
     public async delete(request: Request, response: Response){
 
         //Converte id pego na requisição
@@ -173,5 +174,5 @@ export class ClientesController{
 
         return response.status(200).json("User delete sucess");
     }
-
+    */
 }
