@@ -15,7 +15,7 @@ model Cliente {
   cpf   String @unique
   nome  String
   email String  @unique
-  password_hash String
+  password_hash String 
   telefone String
   cep String
   estado String
