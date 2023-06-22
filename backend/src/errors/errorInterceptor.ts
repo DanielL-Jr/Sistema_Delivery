@@ -7,6 +7,7 @@ export function errorInterceptor(
     response: Response, 
     next: NextFunction
 ) {
+    console.log(error.message);
     if(error instanceof AppError){
         return response.status(error.statusCode).json({
             status: "Error",
@@ -21,7 +22,6 @@ export function errorInterceptor(
         });
 
     }
-    console.log(error.message);
     return response.status(500).json({
         status: "Error",
         message: "Internal Server Error"

@@ -1,9 +1,7 @@
 import { Request, Response } from 'express';
 import Zod from 'zod';
 import { prisma } from '../lib/prisma';
-import { hash } from 'bcrypt';
 import { AppError } from '../errors/AppError';
-import { excludeFields } from '../utils/excludeFields';
 
 export class ComidasController{
 

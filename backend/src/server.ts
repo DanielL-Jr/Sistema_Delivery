@@ -3,6 +3,7 @@ import express from 'express';
 import { routes } from './Routes';
 import { errorInterceptor } from './errors/errorInterceptor';
 import cors from 'cors';
+import 'dotenv';
 
 const app = express();
 
