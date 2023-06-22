@@ -22,10 +22,9 @@ const isLogged = async () => {
 	const response = await fetch(`http://localhost:3333/verify/${token}`);
 	const logado = await response.json();
 	if (!logado) {
-
 	} else {
-    const center = document.getElementsByTagName("center")[0];
-    lista.removeChild(center);
+		const center = document.getElementsByTagName("center")[0];
+		lista.removeChild(center);
 		btnLogin.innerText = "Sair";
 		cardapioConstructor();
 	}

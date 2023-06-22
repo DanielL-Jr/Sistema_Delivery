@@ -1,183 +1,202 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
-    <link rel="stylesheet" href="css/login.css" />
-  </head>
-  <body>
-    <div class="wrapper">
-      <div class="title-text">
-        <div class="title login">Login</div>
-        <div class="title signup">Cadastre-se</div>
-      </div>
-      <div class="form-container">
-        <div class="slide-controls">
-          <input type="radio" name="slide" id="login" checked />
-          <input type="radio" name="slide" id="signup" />
-          <label for="login" class="slide login">Login</label>
-          <label for="signup" class="slide signup">Cadastre-se</label>
-          <div class="slider-tab"></div>
-        </div>
-        <div class="form-inner">
-          <form class="login" id="formLogin">
-            <div class="field">
-              <input type="text" placeholder="Email" name="loginEmail" id="loginEmail" required />
-            </div>
-            <div class="field">
-              <input type="password" placeholder="Senha" name="loginSenha" id="loginSenha" required />
-            </div>
-            <div class="pass-link">
-              <a href="#">Esqueceu sua Senha?</a>
-            </div>
-            <div class="field btn">
-              <div class="btn-layer"></div>
-              <input type="submit" value="Entrar" />
-            </div>
-            <div class="text_1">
-              <center><p>OBS: PARA FAZER SEU PEDIDO, ENTRE COM SUA CONTA <br> SE AINDA NÃO TIVER ACESSO, POR FAVOR CADASTRE-SE</p></center>
-             </div>
-          </form>
-          <form class="signup" id="formCadastro" method="POST">
-            <div class="field">
-              <input
-                type="text"
-                placeholder="CPF"
-                name="cpf"
-                id="cpf"
-                required
-              />
-            </div>
-            <div class="field">
-              <input
-                type="text"
-                placeholder="Nome Completo"
-                name="nome"
-                id="nome"
-                required
-              />
-            </div>
-            <div class="field">
-              <input
-                type="text"
-                placeholder="Email"
-                name="email"
-                id="email"
-                required
-              />
-            </div>
-            <div class="field">
-              <input
-                type="password"
-                placeholder="Senha"
-                name="senha"
-                id="senha"
-                required
-              />
-            </div>
-            <div class="field">
-              <input
-                type="password"
-                placeholder="Confirmar senha"
-                name="confirmSenha"
-                id="confirmSenha"
-                required
-              />
-            </div>
-            <div class="field">
-              <input
-                type="text"
-                placeholder="Telefone"
-                name="telefone"
-                id="telefone"
-                maxlength="15"
-                required
-              />
-            </div>
-            <div class="field">
-              <input
-                type="text"
-                placeholder="CEP"
-                name="cep"
-                id="cep"
-                onblur="verificarCEP()"
-                required
-              />
-            </div>
-            <div class="field">
-              <select name="estado" id="estado"></select>
-            </div>
-            <div class="field">
-              <select name="cidade" id="cidade"></select>
-            </div>
-            <div class="field">
-              <input
-                type="text"
-                placeholder="Bairro"
-                name="bairro"
-                id="bairro"
-                required
-              />
-            </div>
-            <div class="field">
-              <input
-                type="text"
-                placeholder="Endereço"
-                name="endereco"
-                id="endereco"
-                required
-              />
-            </div>
-            <div class="field">
-              <input
-                type="text"
-                placeholder="Número"
-                name="numero"
-                id="numero"
-                required
-              />
-            </div>
-            <div class="field">
-              <input
-                type="text"
-                placeholder="Complemento"
-                name="complemento"
-                id="complemento"
-              />
-            </div>
-            <div class="field btn">
-              <div class="btn-layer"></div>
-              <input type="submit" value="Cadastrar" />
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Login</title>
+		<link rel="stylesheet" href="css/login.css" />
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="title-text">
+				<div class="title login">Login</div>
+				<div class="title signup">Cadastre-se</div>
+			</div>
+			<div class="form-container">
+				<div class="slide-controls">
+					<input type="radio" name="slide" id="login" checked />
+					<input type="radio" name="slide" id="signup" />
+					<label for="login" class="slide login">Login</label>
+					<label for="signup" class="slide signup">Cadastre-se</label>
+					<div class="slider-tab"></div>
+				</div>
+				<div class="form-inner">
+					<form class="login" id="formLogin">
+						<div class="field">
+							<input
+								type="text"
+								placeholder="Email"
+								name="loginEmail"
+								id="loginEmail"
+								required
+							/>
+						</div>
+						<div class="field">
+							<input
+								type="password"
+								placeholder="Senha"
+								name="loginSenha"
+								id="loginSenha"
+								required
+							/>
+						</div>
+						<div class="pass-link">
+							<a href="#">Esqueceu sua Senha?</a>
+						</div>
+						<div class="field btn">
+							<div class="btn-layer"></div>
+							<input type="submit" value="Entrar" />
+						</div>
+						<div class="text_1">
+							<center>
+								<p>
+									OBS: PARA FAZER SEU PEDIDO, ENTRE COM SUA
+									CONTA <br />
+									SE AINDA NÃO TIVER ACESSO, POR FAVOR
+									CADASTRE-SE
+								</p>
+							</center>
+						</div>
+					</form>
+					<form class="signup" id="formCadastro" method="POST">
+						<div class="field">
+							<input
+								type="text"
+								placeholder="CPF"
+								name="cpf"
+								id="cpf"
+								required
+							/>
+						</div>
+						<div class="field">
+							<input
+								type="text"
+								placeholder="Nome Completo"
+								name="nome"
+								id="nome"
+								required
+							/>
+						</div>
+						<div class="field">
+							<input
+								type="text"
+								placeholder="Email"
+								name="email"
+								id="email"
+								required
+							/>
+						</div>
+						<div class="field">
+							<input
+								type="password"
+								placeholder="Senha"
+								name="senha"
+								id="senha"
+								required
+							/>
+						</div>
+						<div class="field">
+							<input
+								type="password"
+								placeholder="Confirmar senha"
+								name="confirmSenha"
+								id="confirmSenha"
+								required
+							/>
+						</div>
+						<div class="field">
+							<input
+								type="text"
+								placeholder="Telefone"
+								name="telefone"
+								id="telefone"
+								maxlength="15"
+								required
+							/>
+						</div>
+						<div class="field">
+							<input
+								type="text"
+								placeholder="CEP"
+								name="cep"
+								id="cep"
+								onblur="verificarCEP()"
+								required
+							/>
+						</div>
+						<div class="field">
+							<select name="estado" id="estado"></select>
+						</div>
+						<div class="field">
+							<select name="cidade" id="cidade"></select>
+						</div>
+						<div class="field">
+							<input
+								type="text"
+								placeholder="Bairro"
+								name="bairro"
+								id="bairro"
+								required
+							/>
+						</div>
+						<div class="field">
+							<input
+								type="text"
+								placeholder="Endereço"
+								name="endereco"
+								id="endereco"
+								required
+							/>
+						</div>
+						<div class="field">
+							<input
+								type="text"
+								placeholder="Número"
+								name="numero"
+								id="numero"
+								required
+							/>
+						</div>
+						<div class="field">
+							<input
+								type="text"
+								placeholder="Complemento"
+								name="complemento"
+								id="complemento"
+							/>
+						</div>
+						<div class="field btn">
+							<div class="btn-layer"></div>
+							<input type="submit" value="Cadastrar" />
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
 
-    <!--SCRIPT DO JS-->
-    <script>
-      const loginText = document.querySelector(".title-text .login");
-      const loginForm = document.querySelector("form.login");
-      const loginBtn = document.querySelector("label.login");
-      const signupBtn = document.querySelector("label.signup");
-      const signupLink = document.querySelector("form .signup-link a");
-      signupBtn.onclick = () => {
-        loginForm.style.marginLeft = "-50%";
-        loginText.style.marginLeft = "-50%";
-      };
-      loginBtn.onclick = () => {
-        loginForm.style.marginLeft = "0%";
-        loginText.style.marginLeft = "0%";
-      };
-      signupLink.onclick = () => {
-        signupBtn.click();
-        return false;
-      };
-      login.form = () => {
-        loginForm.style.margin = "30%";
-      };
-    </script>
-    <script src="./js/login.js"></script>
-  </body>
+		<!--SCRIPT DO JS-->
+		<script>
+			const loginText = document.querySelector(".title-text .login");
+			const loginForm = document.querySelector("form.login");
+			const loginBtn = document.querySelector("label.login");
+			const signupBtn = document.querySelector("label.signup");
+			const signupLink = document.querySelector("form .signup-link a");
+			signupBtn.onclick = () => {
+				loginForm.style.marginLeft = "-50%";
+				loginText.style.marginLeft = "-50%";
+			};
+			loginBtn.onclick = () => {
+				loginForm.style.marginLeft = "0%";
+				loginText.style.marginLeft = "0%";
+			};
+			signupLink.onclick = () => {
+				signupBtn.click();
+				return false;
+			};
+			login.form = () => {
+				loginForm.style.margin = "30%";
+			};
+		</script>
+		<script src="./js/login.js"></script>
+	</body>
 </html>
